@@ -15,12 +15,12 @@ module.exports = {
             },
             height:{
                     "10v":"10vh",
-                    "15v":"15vh",
-                    "65v":"65vh"
+                    "5v":"5vh",
+                    "75v":"75vh"
             },
             colors: {
                     "header":"#FF720B",
-                    "nav":"#EDEDEE",
+                    "nav":"#D1D5DB",
                     "main":"#FFFFFF",
                     "footer":"#A9A9A9"
             },

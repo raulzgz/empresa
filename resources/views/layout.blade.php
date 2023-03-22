@@ -10,16 +10,16 @@
 </head>
 <body>
 
-<header class="bg-header h-15v flex flex-row justify-between items-center p-4 hover:rounded-b-lg">
+<header class="bg-header h-10v flex flex-row justify-between items-center p-2 hover:rounded-b-lg">
     <img class="max-h-full" src="{{asset("images/logo1.png")}}" alt="logo">
-    <h1 class="max-h-full text-5xl text-white">Gestion de Empresas</h1>
+    <h1 class="max-h-full text-4xl text-white">Gestion de Empresas</h1>
     <div>
         @auth
-            <div class="p-1 text-end pr-4 text-white">
+            <div class="pt-8 text-end pr-6 text-black">
                 Bienvenido
-                <span class="text-black capitalize"> {{auth()->user()->name}} </span>
+                <span class="text-white capitalize"> {{auth()->user()->name}} </span>
             </div>
-            <div class="p-1 text-end">
+            <div class="pt-2 pr-4 text-end">
             <form action="logout" method="POST">
                 @csrf
                 <x-login-button> SALIR </x-login-button>
@@ -30,11 +30,11 @@
         @guest
             <form action="login" method="POST">
                 @csrf
-                <div class="p-1">
+                <div class="pt-8">
                     <input type="email" name="email" placeholder="email">
                     <input type="password" name="password" placeholder="password">
                 </div>
-                <div class="p-1 text-end">
+                <div class="p-2 text-end">
                     <x-login-button> ENTRAR </x-login-button>
                     <x-login-button><a href="{{route('register')}}">Registrarse</a></x-login-button>
                 </div>
@@ -44,18 +44,18 @@
 
 </header>
 
-<nav class="h-10v bg-nav p-2 hover:rounded-b-lg">
+<nav class="h-5v bg-nav p-2 hover:rounded-b-lg">
     <h1> menu  de navegación dependará de cada página, inyectar un yield</h1>
 
 </nav>
 
-<main class="h-65v p-4 bg-main">
+<main class="h-75v p-4 bg-main">
     @yield("main")
 
 </main>
 
 <footer class="h-10v bg-footer p-4 hover:rounded-t-lg" >
-    <h1>footer  fijo @copyright contacto y podrímos aportar redes sociales</h1>
+    <h1>footer  fijo @copyright contacto y podraímos aportar redes sociales</h1>
 
 </footer>
 
