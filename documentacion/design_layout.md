@@ -1,57 +1,31 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## LAYOUT
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Creamos el diseño siguiendo las especificaciones dadas
 
-## Proyecto empresas
+Para eso añadimos las clases en [tailwind.config.js](../tailwind.config.js)
 
-Creo el nuevo proyecto con laravel
+```json
+     height: {
+        "10v": "10vh",
+        "15v": "15vh",
+        "65v": "65vh"
+    },
+    colors: {
+        "header": "#E6621F",
+        "nav": "#EDEDEE",
+        "main": "#FFFFFF",
+        "footer": "#898989"
+},
+```
+* Establecemos el [layout.blade.php](../resources/views/layout.blade.php)
+* Lo probamos
+1. Creo una nueva ruta que retorne una pagina que exteinda de layout
+2. creamos la ruta
 
-```shell
-laravel new Empresas
+```php
+Route::view("main", "empresa.main");
 ```
 
-## Requisitos:
+3. creo la pagina [main.blade.php](../resources/views/empresa/main.blade.php)
+4. Lo probamos [http://localhost:8000/main](http://localhost:8000/main)
 
-### R1 Instalar autenticacion
-Dentro del directorio creado de Empresas ejecutamos estas isntrucciones:
-
-1. npm install
-2. git init
-3.    
-```shell
-    composer require laravel/breeze
-    php artisan breeze:install
-    npm install
-    npm run dev
-```
-4. Creamos el fichero [docker-composer.yaml](./docker-compose.yaml)
-```shell
-    docker compose up -d
-```
-5. Configuro el fichero [.ENV](./.env) para configurar la base de datos 
-```shell
-    B_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=empresa
-    DB_USERNAME=manuel
-    DB_PASSWORD=manuel
-```
-6. Ejecuto las migraciones
-```shell
-    php artisan migrate 
-```
-7. Arranco las herramientas de cliente
-```shell
-    npm run dev
-```
-8. puedo probar que esta todo bien instalado y pruebo a loguearme
-9. abro el servidor y me conecto a la aplicacion
-```shell
-    php artisan serve &
-```
