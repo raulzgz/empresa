@@ -19,10 +19,10 @@ module.exports = {
                     "65v":"65vh"
             },
             colors: {
-                    "header":"#E6621F",
+                    "header":"#FF720B",
                     "nav":"#EDEDEE",
                     "main":"#FFFFFF",
-                    "footer":"#898989"
+                    "footer":"#A9A9A9"
             },
         },
     },

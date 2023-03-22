@@ -14,17 +14,32 @@
     <img class="max-h-full" src="{{asset("images/logo1.png")}}" alt="logo">
     <h1 class="max-h-full text-5xl text-white">Gestion de Empresas</h1>
     <div>
-        <form action="login" method="POST">
-            @csrf
-            <div class="p-1">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="password">
+        @auth
+            <div class="p-1 text-end pr-4 text-white">
+                Bienvenido
+                <span class="text-black capitalize"> {{auth()->user()->name}} </span>
             </div>
             <div class="p-1 text-end">
-                <x-login-button>Login</x-login-button>
-                <x-login-button><a href="{{route('register')}}">Registrarse</a></x-login-button>
-            </div>
-        </form>
+            <form action="logout" method="POST">
+                @csrf
+                <x-login-button> SALIR </x-login-button>
+            </form>
+        </div>
+        @endauth
+
+        @guest
+            <form action="login" method="POST">
+                @csrf
+                <div class="p-1">
+                    <input type="email" name="email" placeholder="email">
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <div class="p-1 text-end">
+                    <x-login-button> ENTRAR </x-login-button>
+                    <x-login-button><a href="{{route('register')}}">Registrarse</a></x-login-button>
+                </div>
+            </form>
+        @endguest
     </div>
 
 </header>
