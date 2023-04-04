@@ -11,8 +11,6 @@
 </head>
 <body>
 <div id="app">
-
-
 <header class="bg-header h-10v flex flex-row justify-between items-center p-2">
     <img class="max-h-full" src="{{asset("images/logo1.png")}}" alt="logo">
     <h1 class="max-h-full text-4xl text-white">Gestion de Empresas</h1>
@@ -69,6 +67,7 @@
         </div>
 </nav>
 
+
 <main class="h-75v p-4 bg-main">
     @yield("main")
 
@@ -79,7 +78,6 @@
     <p>@copyright Raul Navarro Sos - Desarrollo de aplicaciones con tecnologías web </p>
 
 </footer>
-
 </div>
 </body>
 

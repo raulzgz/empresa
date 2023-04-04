@@ -13,7 +13,6 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //$empresas=Empresa::paginate(10);
         $empresas=Empresa::all();
         $campos = array_keys($empresas[0]->getAttributes());
 
