@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\IdiomaController;
 use App\Http\Controllers\ProductoController;
 
 /*
@@ -18,6 +20,7 @@ use App\Http\Controllers\ProductoController;
 
 Route::resource("empresas", EmpresaController::class);
 Route::resource("alumnos", AlumnoController::class);
+Route::resource("idiomas", IdiomaController::class);
 Route::resource("/productos", ProductoController::class);
 
 Route::view("main", "empresa.main");

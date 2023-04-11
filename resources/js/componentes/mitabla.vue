@@ -2,15 +2,16 @@
 
     <div class="relative overflow-x-auto">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <caption>{{tabla}}</caption>
             <thead class="text-lg text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th v-for="(campo) in campos" class="px-6 py-2"><button @click='ordenar(campo)'> {{campo}} </button></th>
+                 <th v-for="campo in campos" class="px-6 py-2"><button @click='ordenar(campo)' class="text-sm">
+                     &uarr;&darr; </button> {{campo}} </th>
+                <!--<th v-for="(campo, index) in campos" class="px-6 py-2"><input @keyup="filtra(campo, valor[index])" type="text" v-model="valor[index]"/> <button @click='ordenar(campo)'> {{campo}} </button></th> -->
             </tr>
             </thead>
             <tbody>
-            <tr v-for="(fila) in filas" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <td v-for="(valor) in fila" class="px-6 py-2">{{valor}}</td>
+            <tr v-for="fila in filas" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td v-for="valor in fila" class="px-6 py-2">{{valor}}</td>
 
             </tr>
             </tbody>
@@ -28,6 +29,7 @@ export default {
         return{
             filas:Array,
             campos:Array,
+            ascendente:true
         }
     },
     created(){
@@ -37,11 +39,14 @@ export default {
     methods:{
         ordenar:function (campo){
             this.filas = this.filas.sort((a,b)=>{
+                let retorno;
                 if (a[campo]>b[campo])
-                    return 1;
+                    retorno = this.ascendente ? 1 : -1;
                 else
-                    return -1;
+                    retorno = this.ascendente ? -1 : 1;
+                return retorno;
             });
+            this.ascendente = !this.ascendente;
         }
     }
 }
