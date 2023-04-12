@@ -41,6 +41,7 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
+        echo "<h1>Estoy en show de $producto</h1>";
         //
     }
 

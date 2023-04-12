@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
+    //qué atributos permito con carga masiva de un formulario
     protected $fillable=['cod','nombre','nombre_corto','descripcion', 'PVP', 'familia'];
     use HasFactory;
     // nombre de tabla relacionada

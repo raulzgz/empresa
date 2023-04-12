@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Idioma extends Model
 {
     use HasFactory;
+    protected $hidden=['created_at', 'updated_at'];
+    protected $fillable=['idioma', 'alumno_id'];
 }

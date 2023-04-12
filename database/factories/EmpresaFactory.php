@@ -17,7 +17,7 @@ class EmpresaFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre'=>fake()->name(),
+            'nombre'=>fake()->company(),
             'direccion'=>fake()->address()
             //
         ];

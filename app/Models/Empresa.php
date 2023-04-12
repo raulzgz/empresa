@@ -9,4 +9,5 @@ class Empresa extends Model
 {
     use HasFactory;
     protected $hidden=['created_at', 'updated_at'];
+    protected $fillable=['nombre', 'direccion'];
 }

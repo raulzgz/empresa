@@ -14,8 +14,7 @@
                     x-transition:leave-end="opacity-0">
                 <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-70" />
                 <figcaption class="absolute inset-x-0 bottom-1 z-20 w-96 mx-auto p-4 font-bold text-sm text-center tracking-widest leading-snug bg-gray-300 bg-opacity-50">
-                    Tailwindcss Carousel
-                </figcaption>
+                    Tailwindcss Carousel                </figcaption>
             </figure>
         </template>
 

@@ -13,7 +13,20 @@ class IdiomaController extends Controller
      */
     public function index()
     {
-        //
+        $idiomas=Idioma::paginate(10);
+        $campos = array_keys($idiomas[0]->getAttributes());
+
+        unset($campos[array_search('created_at', $campos)]);
+        unset($campos[array_search('updated_at', $campos)]);
+
+
+
+        return view("idioma.listado", ['filas'=>$idiomas, 'campos'=>$campos, 'tabla'=>'Idiomas']);
+    }
+
+    public function get_paginate(){
+        $idiomas=Idioma::paginate(10);
+        return response($idiomas);
     }
 
     /**
@@ -37,7 +50,7 @@ class IdiomaController extends Controller
      */
     public function show(Idioma $idioma)
     {
-        //
+        return view ('idioma.consultar', ['idioma'=>$idioma]);
     }
 
     /**
@@ -45,7 +58,7 @@ class IdiomaController extends Controller
      */
     public function edit(Idioma $idioma)
     {
-        //
+        return view ('idioma.editar', ['idioma'=>$idioma]);
     }
 
     /**
@@ -53,7 +66,9 @@ class IdiomaController extends Controller
      */
     public function update(UpdateIdiomaRequest $request, Idioma $idioma)
     {
-        //
+        $datos = $request->input();
+        $idioma->update($datos);
+        return redirect(route("idioma.index"));
     }
 
     /**
@@ -61,6 +76,8 @@ class IdiomaController extends Controller
      */
     public function destroy(Idioma $idioma)
     {
-        //
+        $idioma->delete();
+        $idioma = Idioma::where()->paginate(10);
+        return response($idioma);
     }
 }

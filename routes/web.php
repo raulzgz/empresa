@@ -17,13 +17,15 @@ use App\Http\Controllers\ProductoController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get("empresas/paginate",[ \App\Http\Controllers\EmpresaController::class,"get_paginate"] );
 Route::resource("empresas", EmpresaController::class);
+
 Route::resource("alumnos", AlumnoController::class);
 Route::resource("idiomas", IdiomaController::class);
 Route::resource("/productos", ProductoController::class);
 
-Route::view("main", "empresa.main");
+
+Route::view("main", "main");
 
 Route::get('/', function () {
     return view('welcome');

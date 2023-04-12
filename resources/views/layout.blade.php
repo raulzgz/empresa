@@ -5,13 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Empresas</title>
+    <title>Practica Empresas Certificado</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 </head>
 <body>
 <div id="app">
-<header class="bg-header h-10v flex flex-row justify-between items-center p-2">
+<header class="bg-header h-10vh flex flex-row justify-between items-center p-2">
     <img class="max-h-full" src="{{asset("images/logo1.png")}}" alt="logo">
     <h1 class="max-h-full text-4xl text-white">Gestion de Empresas</h1>
     <div>
@@ -45,7 +45,7 @@
 
 </header>
 
-<nav class="h-5v bg-nav p-2 dark:bg-gray-900 dark:border-gray-700">
+<nav class="h-5vh bg-nav p-2 dark:bg-gray-900 dark:border-gray-700">
          <div class="container flex flex-wrap items-center justify-between mx-auto">
             <ul class="flex ">
                 <li class="-mb-px mr-1">
@@ -55,26 +55,26 @@
                     <a class="bg-white inline-block rounded-t py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="/empresas">Empresas</a>
                 </li>
                 <li class="mr-1">
-                    <a class="bg-white inline-block rounded-t py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="/alumnos">Alumno</a>
+                    <a class="bg-white inline-block rounded-t py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="/alumnos">Alumnos</a>
                 </li>
                 <li class="mr-1">
                     <a class="bg-white inline-block rounded-t py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="/idiomas">Idiomas</a>
                 </li>
-                <li class="mr-1">
+<!--                <li class="mr-1">
                     <a class="bg-white inline-block rounded-t py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="/productos">Productos</a>
-                </li>
+                </li>-->
             </ul>
         </div>
 </nav>
 
 
-<main class="h-75v p-4 bg-main">
+<main class="h-75vh p-4 bg-main">
     @yield("main")
 
 
 </main>
 
-<footer class="h-10v bg-footer p-4 hover:rounded-t-lg" >
+<footer class="h-10vh bg-footer p-4 hover:rounded-t-lg" >
     <p>@copyright Raul Navarro Sos - Desarrollo de aplicaciones con tecnologías web </p>
 
 </footer>
